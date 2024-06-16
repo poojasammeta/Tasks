@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-4</title>
+    <style>
+      body {
+        background-image: url(images/bg.png);
+        background-size: cover;
+        margin: 10px;
+        padding: 150px;
+      }
+      .sidenav {
+        height: 100%;
+        width: 100px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      .sidenav a {
+        padding: 20px;
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+        display: block;
+        transition: background-color 0.3s;
+        text-align: center;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #666;
+      }
+
+      .sidenav a:nth-child(1) {
+        background-color: pink;
+      }
+      .sidenav a:nth-child(2) {
+        background-color: rgb(139, 139, 222);
+      }
+      .sidenav a:nth-child(3) {
+        background-color: rgb(207, 242, 155);
+      }
+      .sidenav a:nth-child(4) {
+        background-color: gray;
+      }
+
+      .sidenav a:hover {
+        background-color: white;
+      }
+      .main {
+        margin-left: 200px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidenav">
+      <a href="">Java</a>
+      <a href="">CSS</a>
+      <a href="">Html</a>
+      <a href="">Bootstrap</a>
+    </div>
+
+    <div class="main">
+      <h2>Hoverable Side NavButtons</h2>
+      <br />
+      <p>Hover over the buttons in the left side navigation to open them.</p>
+    </div>
+  </body>
+</html>

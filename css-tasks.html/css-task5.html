@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-5</title>
+    <style>
+      body {
+        background-image: url(images/bg.png);
+        background-size: cover;
+        margin: 10px;
+        display: flex;
+      }
+      .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+        width: 100px;
+      }
+      .navbar a {
+        position: relative;
+        padding: 2px;
+        margin-right: 0px;
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+        transition: background-color 0.3s;
+        text-align: center;
+        width: 200px;
+        height: 40px;
+        margin-bottom: 10px;
+      }
+      .navbar a:hover {
+        background-color: beige;
+      }
+      .navbar a::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 100%;
+        background-color: black;
+      }
+      .navbar a:nth-child(1) {
+        background-color: pink;
+      }
+      .navbar a:nth-child(2) {
+        background-color: rgb(139, 139, 222);
+      }
+      .navbar a:nth-child(3) {
+        background-color: rgb(207, 242, 155);
+      }
+      .navbar a:nth-child(4) {
+        background-color: gray;
+      }
+      .navbar a:hover {
+        background-color: beige;
+      }
+      .main {
+        padding-left: 250px;
+        flex-grow: 1;
+      }
+      .colored-hr {
+            border: none; 
+            height: 1px;
+            background-color:black; 
+            margin: 20px 0; 
+        }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="">HomePage</a>
+      <a href="">Musings</a>
+      <a href="">My town</a>
+      <a href="">Links</a>
+    </div>
+<div class="main">
+  <h1>My first styled page</h1>
+  <p>Welcome to my styled page!</p>
+  <p>It lacks images,but atleat it has style.And it has links,even if they don't go anywhere...</p>
+  <p>There should be more here, but I don't know what yet.<hr class="colored-hr">Made 15 June 2024
+      by myself</p>
+       
+    </div>
+  </body>
+</html>

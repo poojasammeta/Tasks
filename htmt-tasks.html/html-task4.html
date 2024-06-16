@@ -1,0 +1,124 @@
+<shift></shift>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-4</title>
+    <style>
+      body {
+        background-image: url(images/bg.png);
+        background-size: cover;
+        border: 3px solid black;
+        margin: 10px;
+        padding: 50px;
+      }
+      #box {
+        background-color: beige;
+        height: 350px;
+        width: 500px;
+        margin: auto;
+        padding-top: 25px;
+        padding-left: 25px;
+      }
+      p {
+        text-align: center;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 25px;
+        text-decoration: underline;
+      }
+      label {
+        margin-right: 27px;
+      }
+      label1 {
+        margin-right: 30px;
+      }
+      label2 {
+        margin-right: 33px;
+      }
+      label3 {
+        margin-right: 11px;
+      }
+      label4 {
+        margin-right: 41px;
+      }
+      label5 {
+        margin-right: 67px;
+      }
+      label6 {
+        margin-right: 46px;
+      }
+
+      button:hover {
+        background-color: rgb(103, 239, 103);
+        font-size: 1.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Form</p>
+    <div id="box">
+      <form action="index.php" method="post" enctype="multipart/form-data">
+        <label for="name">Full Name:</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Vincent Maverick Durano"
+          minlength="5"
+          maxlength="50"
+          required
+        /><br />
+        <br />
+        <label1 for="username">Username:</label1>
+        <input
+          type="text"
+          id="username"
+          placeholder="Vinz"
+          minlength="5"
+          maxlength="50"
+          required
+        /><br />
+        <br />
+        <label2 for="password">Password:</label2>
+        <input
+          type="password"
+          id="password"
+          minlength="4"
+          maxlength="6"
+          required
+        /><br />
+        <br />
+        <label3 for="pasword">Re Password:</label3>
+        <input
+          type="password"
+          id="pasword"
+          minlength="4"
+          maxlength="6"
+          required
+        /><br />
+        <br />
+        <label4 for="address">Address:</label4>
+        <input
+          type="text"
+          id="address"
+          maxlength="100"
+          placeholder="Cebu,Philippines"
+          required
+        /><br />
+        <br />
+        <label5 for="age">Age:</label5>
+        <input type="numbers" id="age" required /><br />
+        <br />
+        <label6 for="gender">Gender:</label6>
+        <select id="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Others">Others</option></select
+        ><br />
+        <br />
+        <button>Save</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-6</title>
+    <style>
+      body {
+        background-image: url(images/bg.png);
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .input-wrapper {
+        position: relative;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      .submit-button {
+        background-color: red;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .submit-button:hover {
+        background-color: darkred;
+      }
+
+      .exclamation-mark {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: red;
+        font-weight: bold;
+        display: none;
+      }
+
+      .show-exclamation .exclamation-mark {
+        display: inline;
+      }
+      .required {
+        color: red;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <div class="input-wrapper" id="name-wrapper">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+        <div class="exclamation-mark">!</div>
+        <div class="required">Name is required</div>
+      </div>
+
+      <div class="input-wrapper" id="email-wrapper">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+        <div class="exclamation-mark">!</div>
+        <div class="required">Email is required</div>
+      </div>
+
+      <div class="input-wrapper" id="password-wrapper">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+        <div class="exclamation-mark">!</div>
+        <div class="required">Password is required</div>
+      </div>
+
+      <div class="input-wrapper">
+        <label for="hobbies">Hobbies</label>
+        <textarea id="hobbies" name="hobbies" rows="4"></textarea>
+      </div>
+
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("form");
+
+        const fields = [
+          { id: "name", wrapper: "name-wrapper" },
+          { id: "email", wrapper: "email-wrapper" },
+          { id: "password", wrapper: "password-wrapper" },
+        ];
+
+        fields.forEach((field) => {
+          const input = document.getElementById(field.id);
+          const wrapper = document.getElementById(field.wrapper);
+          const requiredMessage = wrapper.querySelector(".required");
+          const exclamationMark = wrapper.querySelector(".exclamation-mark");
+
+          input.addEventListener("input", function () {
+            if (input.value.trim() === "") {
+              requiredMessage.style.display = "block";
+              exclamationMark.style.display = "inline";
+            } else {
+              requiredMessage.style.display = "none";
+              exclamationMark.style.display = "none";
+            }
+          });
+
+          if (input.value.trim() === "") {
+            requiredMessage.style.display = "block";
+            exclamationMark.style.display = "inline";
+          } else {
+            requiredMessage.style.display = "none";
+            exclamationMark.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
