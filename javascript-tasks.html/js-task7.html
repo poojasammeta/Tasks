@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js-task7</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      .train-container {
+        position: relative;
+        width: 80%;
+        height: 150px;
+        overflow: hidden;
+        border: 3px solid #000;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .train {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        top: 25px;
+        left: 0;
+        background: url(images/train.png) no-repeat;
+        background-size: cover;
+        transition: left 0.1s linear;
+      }
+
+      .button-container {
+        display: flex;
+        gap: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: rgb(14, 178, 14);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: rgb(21, 116, 21);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Click the following buttons to handle animation</h1>
+    <div class="train-container">
+      <div class="train" id="train"></div>
+    </div>
+    <div class="button-container">
+      <button id="startBtn">Start</button>
+      <button id="stopBtn">Stop</button>
+    </div>
+    <script>
+      let animation;
+      const train = document.getElementById("train");
+      const startBtn = document.getElementById("startBtn");
+      const stopBtn = document.getElementById("stopBtn");
+
+      startBtn.addEventListener("click", () => {
+        clearInterval(animation);
+        animation = setInterval(() => {
+          let left = parseInt(
+            window.getComputedStyle(train).getPropertyValue("left")
+          );
+          if (left > document.querySelector(".train-container").offsetWidth) {
+            train.style.left = "-150px";
+          } else {
+            train.style.left = left + 5 + "px";
+          }
+        }, 30);
+      });
+
+      stopBtn.addEventListener("click", () => {
+        clearInterval(animation);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js-task5</title>
+    <style>
+      body {
+        background-image: url(images/bg.png);
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        display: flex;
+      }
+      .form-container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="url"],
+      textarea {
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 300px;
+        border-radius: 4px;
+        margin-top: 5px;
+        font-size: 14px;
+      }
+      label {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .error {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: rgb(14, 178, 14);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: rgb(21, 116, 21);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <form id="myForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <span class="error">This field is required</span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <span class="error">A valid email address is required</span>
+        </div>
+        <div class="form-group">
+          <label for="website">Website:</label>
+          <input type="url" id="website" name="website" required />
+          <span class="error">A valid URL is required</span>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <span class="error">This field is required</span>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const website = document.getElementById("website").value;
+          const message = document.getElementById("message").value;
+
+          if (!name) {
+            alert("Name is required");
+            return;
+          }
+
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address");
+            return;
+          }
+
+          try {
+            new URL(website);
+          } catch (_) {
+            alert("Please enter a valid URL");
+            return;
+          }
+
+          if (!message) {
+            alert("Message is required");
+            return;
+          }
+
+          alert("Form submitted successfully!");
+        });
+    </script>
+  </body>
+</html>

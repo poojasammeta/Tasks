@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js-task6</title>
+    <style>
+      body {
+        background-image: url(images/bg.png);
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        display: flex;
+      }
+      .login-box {
+        width: 300px;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .login-box h1 {
+        font-size: 32px;
+        margin-bottom: 30px;
+        font-family: "Billabong", cursive;
+      }
+      .input-box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px;
+        background-color: #fafafa;
+      }
+      .input-box input {
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 14px;
+        background-color: transparent;
+      }
+      .input-box span {
+        margin-right: 10px;
+        font-size: 18px;
+        color: #ccc;
+      }
+      .login-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: rgb(14, 178, 14);
+        border: none;
+        border-radius: 4px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .login-btn:hover {
+        background-color: rgb(21, 116, 21);
+      }
+      .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+        font-size: 14px;
+      }
+      .remember-forgot label {
+        display: flex;
+        align-items: center;
+      }
+      .remember-forgot input {
+        margin-right: 5px;
+      }
+      .remember-forgot a {
+        color: #3897f0;
+        text-decoration: underline;
+        transition: color 0.3s;
+      }
+      .remember-forgot a:hover {
+        color: #2264a6;
+      }
+      hr {
+        margin: 30px 0;
+        border: none;
+        border-top: 1px solid #ccc;
+      }
+      .signup {
+        font-size: 14px;
+      }
+      .signup a {
+        color: #3897f0;
+        text-decoration: underline;
+        transition: color 0.3s;
+      }
+      .signup a:hover {
+        color: #2264a6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>Instagram</h1>
+      <div class="input-box">
+        <span>👤</span>
+        <input type="text" placeholder="Username" />
+      </div>
+      <div class="input-box">
+        <span>🔒</span>
+        <input type="password" placeholder="Password" />
+      </div>
+      <button class="login-btn">Log In</button>
+      <div class="remember-forgot">
+        <label><input type="checkbox" /> Remember me</label>
+        <a href="www" target="_blank">Forgot password?</a>
+      </div>
+      <hr />
+      <div class="signup">
+        Don't have an account?
+        <a href="www" target="_blank">Sign up here</a>
+      </div>
+    </div>
+  </body>
+</html>
