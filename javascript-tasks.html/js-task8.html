@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration Form</title>
+    <title>Js-task8</title>
     <style>
       body {
         background-image: url(images/bg.png);
@@ -24,7 +24,7 @@
         text-align: center;
         color: #333;
         font-size: 24px;
-        margin-bottom: 20px; /* Added margin to separate from form */
+        margin-bottom: 20px;
       }
       .form-group {
         display: flex;
@@ -32,7 +32,7 @@
         margin-bottom: 15px;
       }
       .form-group label {
-        min-width: 100px; /* Adjust as needed */
+        min-width: 100px;
         margin-right: 10px;
         font-size: 14px;
       }
@@ -55,7 +55,7 @@
         color: red;
         display: none;
         font-size: 12px;
-        margin-top: 5px; /* Added margin to separate error messages */
+        margin-top: 5px;
       }
       .submit-btn {
         background-color: #4caf50;
@@ -65,13 +65,13 @@
         border-radius: 5px;
         cursor: pointer;
         width: 100%;
-        margin-top: 20px; /* Increased top margin */
+        margin-top: 20px;
         font-size: 16px;
         transition: background-color 0.3s ease, transform 0.2s ease;
       }
       .submit-btn:hover {
         background-color: #45a049;
-        transform: scale(1.02); /* Slightly scale up on hover */
+        transform: scale(1.02);
       }
     </style>
   </head>
@@ -169,7 +169,6 @@
           <label for="country">Country</label>
           <select id="country" name="country">
             <option value="">Choose your country</option>
-            <!-- Add country options here -->
           </select>
         </div>
 
@@ -200,7 +199,6 @@
         .addEventListener("submit", function (event) {
           let isValid = true;
 
-          // First Name validation
           const firstName = document.getElementById("firstName").value;
           if (firstName.trim() === "") {
             document.getElementById("firstNameError").style.display = "inline";
@@ -209,7 +207,6 @@
             document.getElementById("firstNameError").style.display = "none";
           }
 
-          // Last Name validation
           const lastName = document.getElementById("lastName").value;
           if (lastName.trim() === "") {
             document.getElementById("lastNameError").style.display = "inline";
@@ -218,7 +215,6 @@
             document.getElementById("lastNameError").style.display = "none";
           }
 
-          // Email validation
           const email = document.getElementById("email").value;
           const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
           if (!emailPattern.test(email)) {
@@ -228,7 +224,6 @@
             document.getElementById("emailError").style.display = "none";
           }
 
-          // Password validation
           const password = document.getElementById("password").value;
           if (password.length < 6) {
             document.getElementById("passwordError").style.display = "inline";
@@ -237,7 +232,6 @@
             document.getElementById("passwordError").style.display = "none";
           }
 
-          // Confirm Password validation
           const confirmPassword =
             document.getElementById("confirmPassword").value;
           if (confirmPassword !== password) {
@@ -249,7 +243,6 @@
               "none";
           }
 
-          // Age validation
           const age = document.getElementById("age").value;
           if (isNaN(age) || age.trim() === "") {
             document.getElementById("ageError").style.display = "inline";
@@ -258,7 +251,6 @@
             document.getElementById("ageError").style.display = "none";
           }
 
-          // Phone Number validation
           const phoneNumber = document.getElementById("phoneNumber").value;
           const phonePattern = /^[0-9]{10}$/;
           if (!phonePattern.test(phoneNumber)) {
@@ -269,7 +261,6 @@
             document.getElementById("phoneNumberError").style.display = "none";
           }
 
-          // Address validation
           const address = document.getElementById("address").value;
           if (address.trim() === "") {
             document.getElementById("addressError").style.display = "inline";
@@ -278,7 +269,6 @@
             document.getElementById("addressError").style.display = "none";
           }
 
-          // State validation
           const state = document.getElementById("state").value;
           if (state.trim() === "") {
             document.getElementById("stateError").style.display = "inline";
